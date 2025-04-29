@@ -30,4 +30,11 @@ public abstract class Product {
     public String getId() {
         return id;
     }
+
+    protected abstract String generateId();
+
+    @Override
+    public String toString(){
+        return "ID: " + id + ", Title: " + title + ", Price: " + price;
+    }
 }
