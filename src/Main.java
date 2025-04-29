@@ -10,6 +10,15 @@ public class Main {
         Inventory<Notebook> notebookInventoryInventory = new Inventory<>();
         Inventory<Accessory> accessoryInventory = new Inventory<>();
 
+        bookInventory.addItem(new Book("Critique of Pure Reason" , 45.99," Immanuel Kant", "Khaarazmi", "Epistemology"));
+        bookInventory.addItem(new Book("Animal Farm" , 25.99," George Orwell", "Cheshmeh", "Social policy"));
+
+        notebookInventory.addItem(new Notebook("A4 Notebook", 12.50, 120, false));
+        notebookInventory.addItem(new Notebook("Premium Notebook", 24.99, 200, true));
+
+        accessoryInventory.addItem(new Accessory("Book Mark Pack", 5.99, "Black"));
+        accessoryInventory.addItem(new Accessory("Pen", 1.99, "Blue"));
+
         public static double calculateTotalPrice (Inventory<? extends Product> inventory){
             double total = 0;
             for (Product item : inventory.getItems()){
