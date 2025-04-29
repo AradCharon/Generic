@@ -26,7 +26,6 @@ public class Notebook extends Product{
         }
         return "2" + result;
     }
-    }
 
     public int getPageCount() {
         return pageCount;
