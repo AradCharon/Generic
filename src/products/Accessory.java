@@ -1,4 +1,8 @@
 package products;
 
-public class Accessory {
+public class Accessory extends Product{
+    private String color;
+
+    private static int accessoryCounter = 1;
+
 }
