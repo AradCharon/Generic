@@ -2,6 +2,7 @@ package inventory;
 
 import products.Product;
 import java.util.ArrayList;
+import java.util.List;
 
 public class Inventory<T extends Product> {
     private ArrayList<T> items;
@@ -29,5 +30,16 @@ public class Inventory<T extends Product> {
 
     public void addItem(T product){
         items.add(product);
+    }
+
+    public void removeItemById(String id) {
+        List<T> itemsToRemove = new ArrayList<>();
+
+        for (T item : items) {
+            if (item.getId().equals(id)) {
+                itemsToRemove.add(item);
+            }
+        }
+        items.removeAll(itemsToRemove);
     }
 }
