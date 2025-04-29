@@ -26,6 +26,11 @@ public class Main {
         System.out.println("\n=== All Accessories ===");
         accessoryInventory.displayAll();
 
+        System.out.println("\n=== Total Prices ===");
+        System.out.println("Total BookPrices: " + calculateTotalPrice(bookInventory));
+        System.out.println("Total Notebooks Price: " + calculateTotalPrice(notebookInventory));
+        System.out.println("Total Accessories Price: " + calculateTotalPrice(accessoryInventory));
+
         public static double calculateTotalPrice (Inventory<? extends Product> inventory){
             double total = 0;
             for (Product item : inventory.getItems()){
