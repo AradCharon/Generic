@@ -19,6 +19,13 @@ public class Main {
         accessoryInventory.addItem(new Accessory("Book Mark Pack", 5.99, "Black"));
         accessoryInventory.addItem(new Accessory("Pen", 1.99, "Blue"));
 
+        System.out.println("=== All Books ===");
+        bookInventory.displayAll();
+        System.out.println("\n=== All Notebooks ===");
+        notebookInventory.displayAll();
+        System.out.println("\n=== All Accessories ===");
+        accessoryInventory.displayAll();
+
         public static double calculateTotalPrice (Inventory<? extends Product> inventory){
             double total = 0;
             for (Product item : inventory.getItems()){
