@@ -42,4 +42,17 @@ public class Inventory<T extends Product> {
         }
         items.removeAll(itemsToRemove);
     }
+
+    public T findItemsById(int id){
+        for (T item : items) {
+            if (item.getId().equals(id)){
+                return item;
+            }
+        }
+
+        System.out.println("Error: Product with ID " + id + " not found!");
+        return null;
+    }
+
+    
 }
