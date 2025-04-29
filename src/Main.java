@@ -33,7 +33,11 @@ public class Main {
 
         bookInventory.removeItemById("1001");
         notebookInventory.removeItemById("3002");
-        
+
+        System.out.println("\n=== Finding Items ===");
+        System.out.println("Found: " + bookInventory.findItemById("1002"));
+        System.out.println("Not Found: " + bookInventory.findItemById("9999"));
+
         public static double calculateTotalPrice (Inventory<? extends Product> inventory){
             double total = 0;
             for (Product item : inventory.getItems()){
