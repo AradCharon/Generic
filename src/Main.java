@@ -41,6 +41,14 @@ public class Main {
         bookInventory.applyDiscount("Animal Farm", 10);
         accessoryInventory.applyDiscount("Pen", 20);
 
+        System.out.println("\n=== After Changes ===");
+        System.out.println("=== All Books ===");
+        bookInventory.displayAll();
+        System.out.println("\n=== All Notebooks ===");
+        notebookInventory.displayAll();
+        System.out.println("\n=== All Accessories ===");
+        accessoryInventory.displayAll();
+
         public static double calculateTotalPrice (Inventory<? extends Product> inventory){
             double total = 0;
             for (Product item : inventory.getItems()){
