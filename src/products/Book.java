@@ -30,6 +30,30 @@ public class Book extends Product {
         return "1" + result;
     }
 
+    public String getAuthor() {
+        return author;
+    }
+
+    public void setAuthor(String author) {
+        this.author = author;
+    }
+
+    public String getPublication() {
+        return publication;
+    }
+
+    public void setPublication(String author) {
+        this.publication = publication;
+    }
+
+    public String getGenre() {
+        return genre;
+    }
+
+    public void setGenre(String genre) {
+        this.genre = genre;
+    }
+
     @Override
     public String toString(){
         return super.toString() + ", Author: " + author + ", Publication: " + publication + ", Genre: " + genre;
