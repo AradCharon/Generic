@@ -31,6 +31,9 @@ public class Main {
         System.out.println("Total Notebooks Price: " + calculateTotalPrice(notebookInventory));
         System.out.println("Total Accessories Price: " + calculateTotalPrice(accessoryInventory));
 
+        bookInventory.removeItemById("1001");
+        notebookInventory.removeItemById("3002");
+        
         public static double calculateTotalPrice (Inventory<? extends Product> inventory){
             double total = 0;
             for (Product item : inventory.getItems()){
