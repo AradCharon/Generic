@@ -38,6 +38,9 @@ public class Main {
         System.out.println("Found: " + bookInventory.findItemById("1002"));
         System.out.println("Not Found: " + bookInventory.findItemById("9999"));
 
+        bookInventory.applyDiscount("Animal Farm", 10);
+        accessoryInventory.applyDiscount("Pen", 20);
+
         public static double calculateTotalPrice (Inventory<? extends Product> inventory){
             double total = 0;
             for (Product item : inventory.getItems()){
