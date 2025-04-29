@@ -54,5 +54,9 @@ public class Inventory<T extends Product> {
         return null;
     }
 
-    
+    public void displayAll(){
+        for (T item : items) {
+            System.out.println(item);
+        }
+    }
 }
