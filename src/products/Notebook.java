@@ -12,7 +12,38 @@ public class Notebook extends Product{
         this.isHardCover = isHardCover;
         notebookCounter++;
     }
-    
+
+    protected abstract String generateId(){
+        String result;
+        if (notebookCounter < 10) {
+            result = "00" + notebookCounter;
+        }
+        else if (notebookCounter < 100) {
+            result = "0" + notebookCounter;
+        }
+        else {
+            result = "" + notebookCounter;
+        }
+        return "2" + result;
+    }
+    }
+
+    public int getPageCount() {
+        return pageCount;
+    }
+
+    public void setPageCount(int pageCount) {
+        this.pageCount = pageCount;
+    }
+
+    public boolean isHardCover() {
+        return isHardCover;
+    }
+
+    public void setHardCover(boolean hardCover) {
+        isHardCover = hardCover;
+    }
+
     @Override
     public String toString(){
         String coverType;
