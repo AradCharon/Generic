@@ -11,7 +11,7 @@ public class Inventory<T extends Product> {
         this.items = new ArrayList<>();
     }
 
-    public ArrayList<T> getItem{
+    public ArrayList<T> getItems() {
         return items;
     }
 
