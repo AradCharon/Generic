@@ -12,11 +12,10 @@ public class Book extends Product {
         this.author = author;
         this.publication = publication;
         this.genre = genre;
-        bookCounter++;
     }
 
     @Override
-    protected abstract String generateId(){
+    protected String generateId() {
         String result;
         if (bookCounter < 10) {
             result = "00" + bookCounter;
@@ -27,6 +26,7 @@ public class Book extends Product {
         else {
             result = "" + bookCounter;
         }
+        bookCounter++; 
         return "1" + result;
     }
 
@@ -42,7 +42,7 @@ public class Book extends Product {
         return publication;
     }
 
-    public void setPublication(String author) {
+    public void setPublication(String publication) {
         this.publication = publication;
     }
 
@@ -55,8 +55,10 @@ public class Book extends Product {
     }
 
     @Override
-    public String toString(){
-        return super.toString() + ", Author: " + author + ", Publication: " + publication + ", Genre: " + genre;
+    public String toString() {
+        return super.toString() +
+                ", Author: " + author +
+                ", Publication: " + publication +
+                ", Genre: " + genre;
     }
-
 }
