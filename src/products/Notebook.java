@@ -1,6 +1,6 @@
 package products;
 
-public class Notebook extends Product{
+public class Notebook extends Product {
     private int pageCount;
     private boolean isHardCover;
 
@@ -10,10 +10,9 @@ public class Notebook extends Product{
         super(title, price);
         this.pageCount = pageCount;
         this.isHardCover = isHardCover;
-        notebookCounter++;
     }
 
-    protected abstract String generateId(){
+    protected String generateId() {
         String result;
         if (notebookCounter < 10) {
             result = "00" + notebookCounter;
@@ -24,6 +23,7 @@ public class Notebook extends Product{
         else {
             result = "" + notebookCounter;
         }
+        notebookCounter++;
         return "2" + result;
     }
 
@@ -44,14 +44,8 @@ public class Notebook extends Product{
     }
 
     @Override
-    public String toString(){
-        String coverType;
-        if (isHardCover) {
-            coverType = "Yes";
-        }
-        else {
-            coverType = "No";
-        }
+    public String toString() {
+        String coverType = isHardCover ? "Yes" : "No";
         return super.toString() + ", Page Count: " + pageCount + ", Hard Cover: " + coverType;
     }
 }
