@@ -7,11 +7,11 @@ import products.Notebook;
 public class Main {
     public static void main(String[] args) {
         Inventory<Book> bookInventory = new Inventory<>();
-        Inventory<Notebook> notebookInventoryInventory = new Inventory<>();
+        Inventory<Notebook> notebookInventory = new Inventory<>();
         Inventory<Accessory> accessoryInventory = new Inventory<>();
 
-        bookInventory.addItem(new Book("Critique of Pure Reason" , 45.99," Immanuel Kant", "Khaarazmi", "Epistemology"));
-        bookInventory.addItem(new Book("Animal Farm" , 25.99," George Orwell", "Cheshmeh", "Social policy"));
+        bookInventory.addItem(new Book("Critique of Pure Reason", 45.99, "Immanuel Kant", "Khaarazmi", "Epistemology"));
+        bookInventory.addItem(new Book("Animal Farm", 25.99, "George Orwell", "Cheshmeh", "Social Policy"));
 
         notebookInventory.addItem(new Notebook("A4 Notebook", 12.50, 120, false));
         notebookInventory.addItem(new Notebook("Premium Notebook", 24.99, 200, true));
@@ -27,19 +27,12 @@ public class Main {
         accessoryInventory.displayAll();
 
         System.out.println("\n=== Total Prices ===");
-        System.out.println("Total BookPrices: " + calculateTotalPrice(bookInventory));
+        System.out.println("Total Books Price: " + calculateTotalPrice(bookInventory));
         System.out.println("Total Notebooks Price: " + calculateTotalPrice(notebookInventory));
         System.out.println("Total Accessories Price: " + calculateTotalPrice(accessoryInventory));
 
-        bookInventory.removeItemById("1001");
-        notebookInventory.removeItemById("3002");
-
-        System.out.println("\n=== Finding Items ===");
-        System.out.println("Found: " + bookInventory.findItemById("1002"));
-        System.out.println("Not Found: " + bookInventory.findItemById("9999"));
-
-        bookInventory.applyDiscount("Animal Farm", 10);
-        accessoryInventory.applyDiscount("Pen", 20);
+        bookInventory.applyDiscount("1002", 10);
+        accessoryInventory.applyDiscount("3001", 20);
 
         System.out.println("\n=== After Changes ===");
         System.out.println("=== All Books ===");
@@ -48,14 +41,13 @@ public class Main {
         notebookInventory.displayAll();
         System.out.println("\n=== All Accessories ===");
         accessoryInventory.displayAll();
+    }
 
-        public static double calculateTotalPrice (Inventory<? extends Product> inventory){
-            double total = 0;
-            for (Product item : inventory.getItems()){
-                total += item.getPrice;
-            }
-
-            return total;
+    public static double calculateTotalPrice(Inventory<? extends Product> inventory) {
+        double total = 0;
+        for (Product item : inventory.getItems()) {
+            total += item.getPrice();
         }
+        return total;
     }
 }
