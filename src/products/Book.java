@@ -26,7 +26,7 @@ public class Book extends Product {
         else {
             result = "" + bookCounter;
         }
-        bookCounter++; 
+        bookCounter++;
         return "1" + result;
     }
 

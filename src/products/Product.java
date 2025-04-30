@@ -8,22 +8,22 @@ public abstract class Product {
     public Product(String title, double price) {
         this.title = title;
         this.price = price;
-        this.id = generateId();
+        this.id = generateId(); 
     }
 
-    public String getTitle{
+    public String getTitle() {
         return title;
     }
 
-    public String setTitle(String title){
+    public void setTitle(String title) {
         this.title = title;
     }
 
-    public String getPrice{
+    public Double getPrice() {
         return price;
     }
 
-    public String setPrice(String title){
+    public void setPrice(double price) {
         this.price = price;
     }
 
@@ -34,7 +34,7 @@ public abstract class Product {
     protected abstract String generateId();
 
     @Override
-    public String toString(){
+    public String toString() {
         return "ID: " + id + ", Title: " + title + ", Price: " + price;
     }
 }
